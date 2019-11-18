@@ -15,19 +15,19 @@
     :wq!
  6. sudo vi /etc/hosts
      here i gave three pvt-ser ip-adddresses and hostnames and saved
-     ex: 172.31.4.112 pvt-ser1
-         172.31.89.9  pvt-ser2
-	 172.31.23.215 pvt-ser3
-	 172.31.16.180 pub-ser
+     ex: 172.31.4.112 private1
+         172.31.89.9  private2
+	 172.31.23.215 private3
+	 172.31.16.180 public
 	 :wq!
  7. sudo vi /etc/sysconfig/network
     Here i gave there private servers hostnames and saved
-    ex: HOSTNAME=pvt-ser1
-        HOSTNAME=pvt-ser2
-	HOSTNAME=pvt-ser3
-	HOSTNAME=pub-ser
+    ex: HOSTNAME=private1
+        HOSTNAME=private2
+	HOSTNAME=private3
+	HOSTNAME=public
 	:wq!
- 8. sudo hostname pub-ser
+ 8. sudo hostname public
  9. sudo su devops (switch root to devops user)
  10. sudo ssh-keygen -t rsa
      It means the above command generates the id_rsa.pub inside the .ssh copy 
@@ -49,29 +49,29 @@ ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC4tScGEV6fe0+XmDkisBwsW/BF97NN7K3ptRt4UwAp
  15.  [root@172.31.4.112]# sudo su devops
  16.  [devops@172.31.4.112 root]# cd
  17.  [devops@172.31.4.112]#sudo vi /etc/hosts
-         172.31.4.112 pvt-ser1
-         172.31.89.9  pvt-ser2
-         172.31.23.215 pvt-ser3
-         172.31.16.180 pub-ser
+         172.31.4.112 private1
+         172.31.89.9  private2
+         172.31.23.215 private3
+         172.31.16.180 public
        :wq!
  18. [devops@172.31.4.112]# sudo vi /etc/sysconfig/network
-        HOSTNAME=pvt-ser1
-        HOSTNAME=pvt-ser2
-        HOSTNAME=pvt-ser3
-        HOSTNAME=pub-ser
+        HOSTNAME=private1
+        HOSTNAME=private2
+        HOSTNAME=private3
+        HOSTNAME=public
      :wq!
- 19. [devops@172.31.4.112]# sudo hostname pvt-ser1
- 20. [devops@pvt-ser1]#sudo ssh-keygen -t rsa
- 21. [devops@pvt-ser1]# cd .ssh
- 22. [devops@pvt-ser1 .ssh]# sudo vi authorized_keys
+ 19. [devops@172.31.4.112]# sudo hostname private1
+ 20. [devops@private1]#sudo ssh-keygen -t rsa
+ 21. [devops@private1]# cd .ssh
+ 22. [devops@private1 .ssh]# sudo vi authorized_keys
        ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABAQC4tScGEV6fe0+XmDkisBwsW/BF97NN7K3ptRt4UwApLD0puGq/X6natJCMcBT5WkdDhD9U4hSMtOHDv7pRP4XB+eK9Hy00hpjOqFcON3G+xnXuQcx03HZ7OKF21KWwUqqlvzaZx+Sr2ZLDheuujFfzfbHuc9TBygXONHIy7+l6Avbvau4T40hCQPex2d7rqU6elj5fYrt1v80VZkICStaEAHWTYqnYk+phxjLHKpLTjDRqRlggae8DwSKMlqplF9gqc52QyyuXKvPz0KYbFIlwGeBDffpkf9KCK8rodsrigN6rdn9YdFYndcc9r+kR7PkQy1gZYnX/QYV/YocSmOW7 devops
        :wq!
- 22. [devops@pvt-ser1 .ssh]# chmod 600 authorized_keys
- 23. terminate the pvt-ser and test from pub-ser means open the public-server
+ 22. [devops@private1 .ssh]# chmod 600 authorized_keys
+ 23. terminate the private1 and test from public means open the public-server
     
      ex:
-     1.[devops@pub-ser ~]$ ssh pvt-ser1
-        after entering the above command it is connect the pub-ser to pvt-ser
+     1.[devops@public ~]$ ssh private1
+        after entering the above command it is connect the public to private
      
 
 
