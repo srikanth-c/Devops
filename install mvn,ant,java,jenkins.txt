@@ -87,7 +87,7 @@ export PATH=${M2_HOME}/bin:${PATH}
          create the port number at AWS-->EC2-->network&security-->security groups-->inbound-->edit and create port
   
     -----------------tomcat 9-------------
-  1. wget http://mirrors.estointernet.in/apache/tomcat/tomcat-9/v9.0.19/bin/apache-tomcat-9.0.19.tar.gz
+  1. wget http://archive.apache.org/dist/tomcat/tomcat-8/v8.0.23/bin/apache-tomcat-8.0.23.tar.gz
   2. tar -xvf apache-tomcat-9.0.19.tar.gz
   3. #mv apache-tomcat-9.0.12 tomcat9
   4. cd /opt/apache-tomcat-9.0.19/bin
