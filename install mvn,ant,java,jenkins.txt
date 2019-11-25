@@ -86,31 +86,7 @@ export PATH=${M2_HOME}/bin:${PATH}
    8  cat /var/lib/jenkins/secrets/initialAdminPassword
          create the port number at AWS-->EC2-->network&security-->security groups-->inbound-->edit and create port
   
-    -----------------tomcat 9-------------
-  1. wget http://www-eu.apache.org/dist/tomcat/tomcat-9/v9.0.27/bin/apache-tomcat-9.0.27.tar.gz -P /tmp
-  2. tar -xvf apache-tomcat-9.0.19.tar.gz
-  3. #mv apache-tomcat-9.0.12 tomcat9
-  4. cd /opt/apache-tomcat-9.0.19/bin
-  5. ./startup.sh
-  6. netstat -tnlp ------default port no:8080
-   if you need to change tomcat default port number
-   follow these steps
-   1. cd apache-tomcat-9.0.19/conf
-   2. vi server.xml
-       change the portnumber in server.xml file and save it
-    if we need to verify the deploy file is available or not in ManagerApp file we can give the user and password for tomcat  
-    in tomcat-users.xml file like below
-  3. vi tomcat-users.xml
- <role rolename="manager-gui"/>
- <role rolename="manager-script"/>
- <user username="tomcat" password="tomcat" roles="manager-gui,manager-script"/> 
-  4. and specify the comment in  vi webapps/manager/META-INF/context.xml   
-  comment this text like below
-  <!--
-  <Valve className="org.apache.catalina.valves.RemoteAddrValve"
-         allow="127\.\d+\.\d+\.\d+|::1|0:0:0:0:0:0:0:1" />
-   -->
-  
+ 
 	---------------GRADLE--------------
  1. cd /opt
  2. sudo wget https://services.gradle.org/distributions/gradle-3.4.1-bin.zip
