@@ -1,0 +1,33 @@
+						------TOMCAT---------
+						
+Note: Before installing apache tomcat, you need to install java in the same server
+-----
+
+
+1. wget http://www-eu.apache.org/dist/tomcat/tomcat-9/v9.0.27/bin/apache-tomcat-9.0.27.tar.gz
+2. tar -xvf apache-tomcat-9.0.27
+3. goto   cd /org/apache-tomcat-9.0.27/bin
+4. then goto  ./startup.sh
+5. test whether server is running or not using (netstat -tnlp)
+       tomcat default port number is 8080
+
+	
+
+			-------If you need to change tomcat port number follow these steps-------
+	 
+	 
+	 a. cd apache-tomcat-9.0.27/conf
+	 b. vi server.xml
+			change the portnumber in server.xml file and save it
+			if we need to verify the deploy file is available or not in ManagerApp file we can give the user and password for tomcat  
+			in tomcat-users.xml file like below
+	 c. vi tomcat-users.xml
+		<role rolename="manager-gui"/>
+		<role rolename="manager-script"/>
+		<user username="tomcat" password="tomcat" roles="manager-gui,manager-script"/> 
+	 d. and specify the comment in  vi webapps/manager/META-INF/context.xml   
+		comment this text like below
+		<!--
+		<Valve className="org.apache.catalina.valves.RemoteAddrValve"
+				allow="127\.\d+\.\d+\.\d+|::1|0:0:0:0:0:0:0:1" />
+		-->	
