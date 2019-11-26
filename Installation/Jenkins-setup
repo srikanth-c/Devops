@@ -1,0 +1,13 @@
+------------JENKINS SETUP--------------
+
+ cd /opt
+  [root@ip-172-31-44-95 opt]#
+  wget https://pkg.jenkins.io/redhat/jenkins-2.175-1.1.noarch.rpm
+  ls
+  rpm -ivh jenkins-2.175-1.1.noarch.rpm
+  ls
+  service jenkins status
+  service jenkins start
+  cat /var/lib/jenkins/secrets/initialAdminPassword
+         create the port number at AWS-->EC2-->network&security-->security groups-->inbound-->edit and create port
+  
