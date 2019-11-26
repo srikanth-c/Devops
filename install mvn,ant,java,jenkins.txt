@@ -62,12 +62,12 @@ export PATH=${M2_HOME}/bin:${PATH}
     1   yum install ant
     2  cd /opt 
     [root@ip-172-31-44-95 opt]#
-    3  wget http://mirrors.wuchna.com/apachemirror//ant/binaries/apache-ant-1.10.5-bin.tar.gz
-    4  tar -xf apache-ant-1.10.5-bin.tar.gz
+    3  http://apachemirror.wuchna.com//ant/binaries/apache-ant-1.10.7-bin.tar.gz
+    4  tar -xf apache-ant-1.10.7-bin.tar.gz
     5  cd
     6   vi /etc/profile.d/ant.sh
 
-	export ANT_HOME=/opt/apache-ant-1.10.5
+	export ANT_HOME=/opt/apache-ant-1.10.7
 	
         :wq!
 
