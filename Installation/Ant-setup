@@ -1,0 +1,14 @@
+   1   yum install ant
+   2  cd /opt 
+   [root@ip-172-31-44-95 opt]#
+   3  wget http://mirrors.estointernet.in/apache//ant/binaries/apache-ant-1.9.14-bin.tar.gz
+   4  tar -xf apache-ant-1.9.14-bin.tar.gz
+   5  cd
+   6   vi /etc/profile.d/ant.sh
+
+	export ANT_HOME=/opt/apache-ant-1.9.14
+	
+        :wq!
+
+   7  ant -version
+	Apache Ant(TM) version 1.9.14 compiled on January 22 2014
